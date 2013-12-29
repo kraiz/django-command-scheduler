@@ -1,0 +1,30 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2013-11-14T20:11:31.969",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$NNzH1f8BSBIQ$C3Y0Fk3VqOHSPXPuQMG3HmuhZHHBSlvrfDskEX/aSBI=",
+            "email": "admin@admin.de",
+            "date_joined": "2013-11-10T12:38:32.361"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "command_scheduler.command",
+        "fields": {
+            "enabled": true,
+            "params": "--switch",
+            "name": "just_stdout",
+            "time": "* * * * *"
+        }
+    }
+]

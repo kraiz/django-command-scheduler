@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+env:
+  - DJANGO=1.4.10
+  - DJANGO=1.5.5
+  - DJANGO=1.6.1
+install:
+  - pip install coverage flake8
+  - pip install Django==$DJANGO
+  - pip install -e .
+before_script:
+  - python manage.py syncdb --noinput
+script:
+  - flake8 command_scheduler
+  - PYTHONPATH=. coverage run --branch --source=command_scheduler python test_project/manage.py test command_scheduler
+  - coverage report

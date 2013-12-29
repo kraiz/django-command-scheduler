@@ -1,4 +1,5 @@
 *.pyc
 .idea
 .vagrant
+database.db
 Vagrantfile

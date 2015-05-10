@@ -11,7 +11,6 @@ from command_scheduler.execution import execute_command
 
 
 class Command(BaseCommand):
-
     def handle(self, *args, **options):
         # create timings used to decide which command to run. this truly relies
         # on the fact cron is triggered every minute and slightly after the

@@ -12,9 +12,9 @@ import signal
 def cron_validator(value):
     try:
         croniter(value)
-    except KeyError, ke:
+    except KeyError as ke:
         raise ValidationError('Invalid value: ' + ke.message)
-    except ValueError, ve:
+    except ValueError as ve:
         raise ValidationError(ve.message)
 
 

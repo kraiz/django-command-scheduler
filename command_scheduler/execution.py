@@ -1,4 +1,4 @@
-from StringIO import StringIO
+from io import StringIO
 from command_scheduler.models import Command, Log
 from django.core.management import execute_from_command_line
 from django.utils.timezone import now
@@ -48,6 +48,7 @@ def execute_command(command_pk):
             )
     except:
         import traceback
+
         stderr.write(traceback.format_exc())
         success = False
     else:

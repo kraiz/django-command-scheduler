@@ -1,5 +1,4 @@
-*.pyc
-.idea
-.vagrant
+__pycache__/
+.idea/
+*.egg-info/
 database.db
-Vagrantfile

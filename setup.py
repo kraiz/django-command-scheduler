@@ -16,7 +16,7 @@ setup(
         'command_scheduler.management',
         'command_scheduler.management.commands'
     ],
-    requires=[
+    install_requires=[
         'Django',
         'croniter>=0.3.3'
     ],

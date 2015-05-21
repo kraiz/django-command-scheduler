@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from multiprocessing import Process
 
 from django.core.management import BaseCommand
+from django.db import connection
 from django.utils.timezone import now, localtime
 
 from croniter import croniter
@@ -24,4 +25,8 @@ class Command(BaseCommand):
             next_run = croniter(command.time, last_run).get_next(datetime)
             # if the command is not still running and should have been run
             if not command.is_running() and last_run < next_run < this_run:
+                # do not share db connection with forked processes
+                # this produce hard to debug problems
+                connection.close()
+                # for a process running the command
                 Process(target=execute_command, args=[command.pk]).start()

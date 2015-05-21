@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from multiprocessing import Process
 
 from django.core.management import BaseCommand
-from django.utils.timezone import now
+from django.utils.timezone import now, localtime
 
 from croniter import croniter
 
@@ -15,7 +15,7 @@ class Command(BaseCommand):
         # create timings used to decide which command to run. this truly relies
         # on the fact cron is triggered every minute and slightly after the
         # exact minute
-        this_run = now()
+        this_run = localtime(now())
         last_run = this_run - timedelta(minutes=1)
 
         # get commands to run

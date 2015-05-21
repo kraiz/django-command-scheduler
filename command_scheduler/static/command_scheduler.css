@@ -1,0 +1,7 @@
+.field-stdout p,
+.field-stderr p {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+}

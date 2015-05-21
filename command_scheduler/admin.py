@@ -62,6 +62,11 @@ class LogAdmin(admin.ModelAdmin):
     readonly_fields = fields
     date_hierarchy = 'started'
 
+    class Media:
+        css = {
+            'all': ('command_scheduler.css',)
+        }
+
     def duration(self, obj):
         if obj.ended is None:
             return '%s (still running)' % (now() - obj.started)

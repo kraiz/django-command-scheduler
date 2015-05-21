@@ -1,13 +1,14 @@
-from io import StringIO
-from command_scheduler.models import Command, Log
-from django.core.management import execute_from_command_line
-from django.utils.timezone import now
-
-from contextlib import contextmanager
-
 import signal
 import sys
 import os
+
+from io import StringIO
+from contextlib import contextmanager
+
+from django.core.management import execute_from_command_line
+from django.utils.timezone import now
+
+from command_scheduler.models import Command, Log
 
 
 def signal_term_handler(signal, frame):

@@ -33,7 +33,7 @@ class Command(models.Model):
         help_text='Save output of command into the log entry'
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property

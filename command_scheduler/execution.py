@@ -29,9 +29,11 @@ def execute_command(command_pk):
     signal.signal(signal.SIGTERM, signal_term_handler)
 
     command = Command.objects.get(pk=command_pk)
-    last_log = command.last_log
-    if last_log is not None and last_log.is_running():
-        return  # old instance still running
+
+    # prevent parallel execution if enabled
+    if not command.parallel:
+        if command.last_log is not None and command.last_log.is_running():
+            return  # old instance still running
 
     log = Log.objects.create(command=command, pid=os.getpid())
 

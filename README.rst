@@ -1,13 +1,13 @@
 about
 =====
-Runs your Django management commands via crontab or onclick in admin site and
-gives you some success and log infos.
+Runs your Django management commands via cron and gives you some success and
+log infos in admin.
 
 features
 --------
 * Single entry in crontab that forks new processes for scheduled commands
-* Define which management command to run when via Django admin
-* Logs success state, stdout & stderr into database log
+* Define which management command when to run via django admin
+* Logs success state, stdout and stderr into database log
 
 setup
 =====
@@ -22,9 +22,9 @@ Add to `INSTALLED_APPS`::
         'command_scheduler',
     )
 
-Run `syncdb`::
+Run `migrate`::
 
-    python manage.py syncdb
+    python manage.py migrate
 
 Insert command a single line into crontab::
 
@@ -32,9 +32,9 @@ Insert command a single line into crontab::
 
 Now go to admin site and add commands!
 
-todo
-====
-* Python 3 support
+todos
+=====
+* Tests (!)
 * Notentifications on error
 
 license

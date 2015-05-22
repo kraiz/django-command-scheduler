@@ -4,12 +4,13 @@ from setuptools import setup
 
 setup(
     name='django-command-scheduler',
-    description='Runs your Django management commands via crontab or onclick in admin site and gives you some success and log infos.',
+    description='Runs your Django management commands via cron and gives you '
+                'some success and log infos in admin.',
     version='0.1.0',
     author='Lars Kreisz',
     author_email='der.kraiz@gmail.com',
     license='MIT',
-    url='https://github.com/ponyriders/django-command-scheduler',
+    url='https://github.com/kraiz/django-command-scheduler',
     long_description=open('README.rst').read(),
     packages=[
         'command_scheduler',
@@ -26,9 +27,10 @@ setup(
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.4',
         'Topic :: System :: Installation/Setup'
     ]
 )

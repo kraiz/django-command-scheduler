@@ -15,8 +15,8 @@ kill_command.short_description = 'Kill the running command'
 
 
 class CommandAdmin(admin.ModelAdmin):
-    list_display = ('name', 'time', 'enabled', 'status', 'last_execution',
-                    'next_execution')
+    list_display = ('name', 'time', 'enabled', 'parallel', 'status',
+                    'last_execution', 'next_execution')
     actions = [kill_command]
 
     def status(self, obj):

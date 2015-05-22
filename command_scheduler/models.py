@@ -20,14 +20,16 @@ def cron_validator(value):
 
 class Command(models.Model):
     name = models.CharField(max_length=255, choices=build_command_choices())
+    enabled = models.BooleanField(default=True)
     params = models.CharField(max_length=255, blank=True)
     time = models.CharField(
         max_length=255,
         validators=[cron_validator],
         help_text='Cron expresion (min, hour, day of month, month, day of week)'
     )
-
-    enabled = models.BooleanField(default=True)
+    parallel = models.BooleanField(
+        default=False,
+        help_text='Allow parallel execution?')
     save_output = models.BooleanField(
         default=True,
         help_text='Save output of command into the log entry'
